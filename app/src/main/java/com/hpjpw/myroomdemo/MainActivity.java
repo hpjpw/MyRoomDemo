@@ -18,7 +18,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     BabyCapViewModel babyCapViewModel;
     BabyCapRecyclerViewAdapter babyCapRecyclerViewAdapter;
-    RecyclerView recyclerView;
     Button buttonInsert, buttonClear;
 
     @Override
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("宝宝相册");
         babyCapViewModel = ViewModelProviders.of(this).get(BabyCapViewModel.class);
         babyCapRecyclerViewAdapter = new BabyCapRecyclerViewAdapter(babyCapViewModel, this);
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
